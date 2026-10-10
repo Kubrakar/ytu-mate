@@ -163,7 +163,7 @@
         .page-section { display: none; animation: slideUp 0.5s ease-out forwards; }
         .page-section.active { display: block; }
 
-        /* Yeni Eklenen Footer Tasarımı */
+        /* Kurumsal Footer Tasarımı */
         .kurumsal-footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -188,8 +188,6 @@
                 <a onclick="showPage('etkinlikler')">Etkinliklerimiz</a>
                 <a onclick="showPage('sosyal-medya')">Sosyal Medya</a>
                 <a onclick="showPage('uye-kayit')">Üye Kayıt Formu</a>
-                <!-- YENİ BİR ETKİNLİK FORMU EKLERSEN BURADAKİ YORUMU KALDIRIP İSMİNİ DEĞİŞTİREBİLİRSİN -->
-                <!-- <a onclick="showPage('yeni-etkinlik-kayit')">AiMed Zirvesi Kayıt</a> -->
             </div>
         </div>
 
@@ -216,7 +214,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="event-content">
-                    <img src="static/Ekran Resmi 2026-10-10 00.56.57.png" alt="UltiMATE AI Summit Afişi">
+                    <img src="static/ultimate-afis.png" alt="UltiMATE AI Summit Afişi">
                     <p>Yapay zeka alanında birbirinden farklı şirket ve konuşmacıların ağırlandığı, okulumuzun ve kulübümüzün en kapsamlı yapay zeka zirvesi.</p>
                     <p>Günümüzde birçok farklı alana dahil olan yapay zeka (endüstri, robotik otomasyon, finans, eğitim, savunma sektörü, yazılım ve siber güvenlik...) sektörlerini Ultimate AI Summit ile bir araya getiriyoruz.</p>
                 </div>
@@ -275,23 +273,6 @@
             </form>
             <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
-
-        <!-- GELECEKTEKİ ETKİNLİKLER İÇİN GİZLİ FORM ŞABLONU -->
-        <!-- Yeni bir form açmak istediğinde aşağıdaki kod bloğunu kopyalayıp yorum (<!-- ve -->) işaretlerini kaldırabilirsin. 
-             id="yeni-etkinlik-kayit" kısmını menüdeki isimle aynı yapmayı unutma! -->
-        
-        <!-- 
-        <div id="yeni-etkinlik-kayit" class="page-section">
-            <h2>Etkinlik Kayıt Formu</h2>
-            <p style="text-align: center;">Etkinliğimize katılmak için formu doldurunuz.</p>
-            <form action="BURAYA_GOOGLE_FORMS_LINKI_GELECEK" method="POST">
-                <label>İsim Soyisim</label><input type="text" name="isim_soyisim" required>
-                <label>Telefon Numarası</label><input type="tel" name="telefon" required>
-                <button type="submit" class="btn-gonder">Kayıt Ol</button>
-            </form>
-            <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
-        </div> 
-        -->
 
         <!-- KURUMSAL ALT BİLGİ (FOOTER) -->
         <div class="kurumsal-footer">
