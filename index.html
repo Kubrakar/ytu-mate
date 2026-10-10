@@ -64,7 +64,7 @@
         .logo { 
             max-width: 250px; 
             height: auto; 
-            margin-bottom: 20px; 
+            margin-bottom: 10px; 
             transition: 0.3s;
             filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
             cursor: pointer;
@@ -98,9 +98,16 @@
         }
         .btn-geri:hover { background-color: #8a2be2; color: white; box-shadow: 0 0 15px rgba(138, 43, 226, 0.5); }
 
+        /* HEADER & MENU TASARIMI */
+        .header-area {
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        
         .hamburger-btn {
             background: linear-gradient(45deg, #4b0082, #8a2be2); color: white; border: none;
-            padding: 14px 28px; font-size: 18px; border-radius: 8px; cursor: pointer;
+            padding: 12px 24px; font-size: 16px; border-radius: 8px; cursor: pointer;
             font-weight: 600; width: 100%; transition: 0.3s; margin-top: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
@@ -163,7 +170,6 @@
         .page-section { display: none; animation: slideUp 0.5s ease-out forwards; }
         .page-section.active { display: block; }
 
-        /* Kurumsal Footer Tasarımı */
         .kurumsal-footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -176,12 +182,10 @@
 </head>
 <body>
     <div class="container">
-        <!-- Logoya tıklayınca Ana Sayfaya döner -->
-        <img src="static/logo.png" alt="MATE Logosu" class="logo" style="margin-top:-20px;" onclick="showPage('ana-sayfa')">
         
-        <!-- ANA SAYFA -->
-        <div id="ana-sayfa" class="page-section active">
-            <p style="font-size: 16px; text-align: center;"><b>Yıldız Teknik Üniversitesinin Yapay Zeka Odaklı Tek Öğrenci Kulübü!</b></p>
+        <!-- HER SAYFADA SABİT KALACAK ÜST KISIM (HEADER & MENÜ) -->
+        <div class="header-area">
+            <img src="static/logo.png" alt="MATE Logosu" class="logo" onclick="showPage('ana-sayfa')">
             <button class="hamburger-btn" onclick="menuyuAcKapat()">&#9776; Menü</button>
             <div class="menu-items" id="acilirMenu">
                 <a onclick="showPage('hakkimizda')">Hakkımızda</a>
@@ -189,6 +193,12 @@
                 <a onclick="showPage('sosyal-medya')">Sosyal Medya</a>
                 <a onclick="showPage('uye-kayit')">Üye Kayıt Formu</a>
             </div>
+        </div>
+        
+        <!-- ANA SAYFA İÇERİĞİ -->
+        <div id="ana-sayfa" class="page-section active">
+            <p style="font-size: 18px; text-align: center; color: #00f2fe;"><b>Yıldız Teknik Üniversitesinin Yapay Zeka Odaklı Tek Öğrenci Kulübü!</b></p>
+            <p style="text-align: center; font-size: 15px;">MATE ailesine hoş geldiniz. Kulübümüz hakkında detaylı bilgi almak, etkinliklerimizi incelemek veya bize katılmak için yukarıdaki menüyü kullanabilirsiniz.</p>
         </div>
 
         <!-- HAKKIMIZDA -->
@@ -200,7 +210,6 @@
             <p>Yapay zekâ ve modern teknolojiler alanında farkındalık yaratarak öğrencilerin bilgi ve üretim kapasitelerini geliştirmek; yapay zekâ ve teknolojiyi iletişimin diliyle harmanlayarak disiplinler arası iş birliğini teşvik etmek. Üyelerimizin teknik donanımlarını sosyal becerilerle bütünleştiren bir gelişim ortamı sunarken, kulübümüzü iş dünyasıyla birleştiren sürdürülebilir bağlar kurmaktır.</p>
             <h3><i class="fa-solid fa-bullseye"></i> Misyonumuz</h3>
             <p>Yıldız Teknik Üniversitesini yapay zekâ alanında öncü bir konuma taşımak; genç mühendislerin ve iletişimcilerin elinden doğan, yenilikçi ve topluma değer katan bireylerden oluşan bir teknoloji topluluğu haline gelmek. Ulusal ve uluslararası ölçekte etki yaratarak hem iş dünyasında fark yaratmak hem de geleceğin teknolojik ekosisteminde sözü geçen vizyoner bir topluluk olmaktır.</p>
-            <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
 
         <!-- ETKİNLİKLER -->
@@ -242,7 +251,6 @@
                     <p><b>Sosyal Aktiviteler:</b> Film geceleri, workshoplar ve dönem içinde gerçekleştirdiğimiz çeşitli kaynaşma etkinlikleri.</p>
                 </div>
             </div>
-            <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
 
         <!-- SOSYAL MEDYA -->
@@ -252,8 +260,6 @@
             <a href="https://www.instagram.com/ytu.mate" target="_blank" class="social-btn insta-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
             <a href="https://linkedin.com/company/ytumate" target="_blank" class="social-btn linkedin-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://www.tiktok.com/@ytu.mate" target="_blank" class="social-btn tiktok-btn"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-            <br>
-            <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
 
         <!-- ÜYE KAYIT FORMU -->
@@ -271,7 +277,6 @@
                 <label>E-posta Adresi</label><input type="email" name="email" required>
                 <button type="submit" class="btn-gonder">Gönder</button>
             </form>
-            <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
 
         <!-- KURUMSAL ALT BİLGİ (FOOTER) -->
