@@ -160,9 +160,18 @@
         .linkedin-btn:hover { background-color: #0077b5; border-color: transparent; } 
         .tiktok-btn:hover { background-color: #111111; border-color: #00f2fe; box-shadow: 0 0 15px #ff0050; }
 
-        /* Sayfa Geçişleri İçin Sınıflar */
         .page-section { display: none; animation: slideUp 0.5s ease-out forwards; }
         .page-section.active { display: block; }
+
+        /* Yeni Eklenen Footer Tasarımı */
+        .kurumsal-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(138, 43, 226, 0.2);
+            font-size: 12px;
+            color: #8a8a93;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -179,6 +188,8 @@
                 <a onclick="showPage('etkinlikler')">Etkinliklerimiz</a>
                 <a onclick="showPage('sosyal-medya')">Sosyal Medya</a>
                 <a onclick="showPage('uye-kayit')">Üye Kayıt Formu</a>
+                <!-- YENİ BİR ETKİNLİK FORMU EKLERSEN BURADAKİ YORUMU KALDIRIP İSMİNİ DEĞİŞTİREBİLİRSİN -->
+                <!-- <a onclick="showPage('yeni-etkinlik-kayit')">AiMed Zirvesi Kayıt</a> -->
             </div>
         </div>
 
@@ -205,7 +216,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="event-content">
-                    <img src="static/ultimate-afis.png" alt="UltiMATE AI Summit Afişi">
+                    <img src="static/Ekran Resmi 2026-10-10 00.56.57.png" alt="UltiMATE AI Summit Afişi">
                     <p>Yapay zeka alanında birbirinden farklı şirket ve konuşmacıların ağırlandığı, okulumuzun ve kulübümüzün en kapsamlı yapay zeka zirvesi.</p>
                     <p>Günümüzde birçok farklı alana dahil olan yapay zeka (endüstri, robotik otomasyon, finans, eğitim, savunma sektörü, yazılım ve siber güvenlik...) sektörlerini Ultimate AI Summit ile bir araya getiriyoruz.</p>
                 </div>
@@ -247,12 +258,11 @@
             <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
 
-        <!-- ÜYE KAYIT -->
+        <!-- ÜYE KAYIT FORMU -->
         <div id="uye-kayit" class="page-section">
             <h2>Üye Kayıt Formu</h2>
-            <p style="text-align: center;">Aramıza katılmak için aşağıdaki formu doldurabilirsin.</p>
+            <p style="text-align: center;">MATE ailesine katılmak için formu doldurabilirsin.</p>
             
-            <!-- KAYIT FORMU (İleride action linki eklenecek) -->
             <form action="#" method="POST">
                 <label>İsim Soyisim</label><input type="text" name="isim_soyisim" required>
                 <label>Okul Adı</label><input type="text" name="okul_adi" required>
@@ -265,6 +275,29 @@
             </form>
             <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
         </div>
+
+        <!-- GELECEKTEKİ ETKİNLİKLER İÇİN GİZLİ FORM ŞABLONU -->
+        <!-- Yeni bir form açmak istediğinde aşağıdaki kod bloğunu kopyalayıp yorum (<!-- ve -->) işaretlerini kaldırabilirsin. 
+             id="yeni-etkinlik-kayit" kısmını menüdeki isimle aynı yapmayı unutma! -->
+        
+        <!-- 
+        <div id="yeni-etkinlik-kayit" class="page-section">
+            <h2>Etkinlik Kayıt Formu</h2>
+            <p style="text-align: center;">Etkinliğimize katılmak için formu doldurunuz.</p>
+            <form action="BURAYA_GOOGLE_FORMS_LINKI_GELECEK" method="POST">
+                <label>İsim Soyisim</label><input type="text" name="isim_soyisim" required>
+                <label>Telefon Numarası</label><input type="tel" name="telefon" required>
+                <button type="submit" class="btn-gonder">Kayıt Ol</button>
+            </form>
+            <button class="btn-geri" onclick="showPage('ana-sayfa')">← Ana Sayfaya Dön</button>
+        </div> 
+        -->
+
+        <!-- KURUMSAL ALT BİLGİ (FOOTER) -->
+        <div class="kurumsal-footer">
+            &copy; 2026 MATE Kulübü - Yıldız Teknik Üniversitesi
+        </div>
+
     </div>
 
     <!-- JavaScript Fonksiyonları -->
@@ -278,15 +311,11 @@
         }
 
         function showPage(pageId) {
-            // Tüm sayfaları gizle
             document.querySelectorAll('.page-section').forEach(function(section) {
                 section.classList.remove('active');
             });
-            // İstenen sayfayı göster
             document.getElementById(pageId).classList.add('active');
-            // Menü açıksa kapat
             document.getElementById("acilirMenu").classList.remove("show");
-            // Sayfayı en üste kaydır
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
